@@ -1,0 +1,398 @@
+@import url("https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@100;200;300;400;500;600;700;800;900&family=Josefin+Sans:wght@300;400;500&family=Nunito:wght@200;300;400;600;700&family=Outfit:wght@400;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700&family=Turret+Road:wght@500&display=swap");
+
+:root {
+    --color-dark-gray: #202123;
+    --color-pink: #fdefc2;
+    --color-yellow: #fabd03;
+    --color-light-gray: #f2f3f5;
+    --color-white: #ffff;
+    --search-box-focus: #fff;
+    --card-box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+        rgb(209, 213, 219) 0px 0px 0px 1px inset;
+    --card-hover-box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em,
+        rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em,
+        rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    --search-box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+        rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    --input-box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px,
+        rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+
+[theme="dark"] {
+    --color-dark-gray: #e1e2e4;
+    --color-pink: #42341b;
+    --color-light-gray: #525355;
+    --color-white: #202125;
+}
+
+/*body::-webkit-scrollbar{
+  width: 12px;
+}
+body::-webkit-scrollbar-track{
+  background-color: #202123;
+}
+body::-webkit-scrollbar-thumb{
+  background-color: black;
+}
+body::-webkit-scrollbar-thumb:hover{
+  background-color: gray;
+}
+*/
+html,
+body {
+    font-family: "Be Vietnam Pro", sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    font-family: inherit;
+    margin: 0;
+    padding: 0;
+    color: var(--color-dark-gray);
+}
+
+a {
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.auth__container {
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+}
+
+.auth__heading {
+    color: var(--color-yellow);
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.auth__google {
+    align-items: center;
+    background-color: orange;
+    border-radius: 0.5rem;
+    color: var(--color-dark-gray);
+    cursor: pointer;
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    margin-bottom: 2rem;
+    padding: 0.7rem 0;
+}
+
+.auth__google>img {
+    height: 2rem;
+    margin-right: 1rem;
+    width: 2rem;
+}
+
+.auth__label {
+    color: black;
+    font-weight: bold;
+    /*background-color: red;*/
+}
+
+.auth__email,
+.auth__password {
+    border: none;
+    border-bottom: 0.2rem solid gray;
+    color: black;
+    font-size: 1rem;
+    margin: 0 0 1.5rem 0.2rem;
+    outline: none;
+    padding: 0.5rem 0.2rem;
+    width: 100%;
+}
+
+.auth__btn {
+    background-color: var(--color-yellow);
+    border-radius: 0.4rem;
+    border: none;
+    color: var(--color-dark-gray);
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 1rem;
+    padding: 0.5rem 0;
+    width: 100%;
+}
+
+.auth__container p {
+    margin-top: 1rem;
+    color: black;
+}
+
+.nav__top {
+    align-items: center;
+    background-color: var(--color-white);
+    border-bottom: 1px solid gray;
+    display: flex;
+    justify-content: space-between;
+    top: 0;
+    padding: 0.5rem 1rem;
+    position: sticky;
+    z-index: 2;
+}
+
+.nav__top__left {
+    align-items: center;
+    display: flex;
+}
+
+.icon__overlay {
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    padding: 0.7rem;
+}
+
+.icon__overlay:hover {
+    background-color: var(--color-light-gray);
+}
+
+.nav__top__logo {
+    color: var(--color-yellow);
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-left: 0.6rem;
+}
+
+.nav__top__mid {
+    background-color: var(--color-light-gray);
+    border-radius: 0.5rem;
+    flex-grow: 1;
+    height: 2.5rem;
+    margin: 0 0.5rem;
+    max-width: 40rem;
+    overflow: hidden;
+    padding: 0.5rem 1rem;
+}
+
+.nav__top__mid>span {
+    align-items: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    width: 100%;
+}
+
+.nav__top__mid>span>input {
+    background-color: transparent;
+    border: none;
+    height: 100%;
+    outline: none;
+    padding-left: 1rem;
+    width: 100%;
+}
+
+.nav__top__mid.shadow {
+    box-shadow: var(--search-box-shadow);
+    background-color: var(--search-box-focus);
+    transition: 0.2s;
+}
+
+.nav__top__right {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.nav__left {
+    background-color: var(--color-white);
+    height: 110vh;
+    overflow: hidden;
+    padding-top: 1rem;
+    position: fixed;
+    top: 3.9rem;
+    transition: 0.3s;
+    width: 5rem;
+    z-index: 1;
+}
+
+.nav__left.active {
+    width: 15rem;
+}
+
+.nav__left:hover {
+    width: 15rem;
+}
+
+.nav__left__item__container {
+    align-items: center;
+    border-radius: 0 2rem 2rem 0;
+    cursor: pointer;
+    display: flex;
+    padding: 0.5rem 0 0.5rem 1.5rem;
+}
+
+.active>.nav__left__item__container {
+    background-color: var(--color-pink);
+}
+
+.active>.nav__left__item__container:hover {
+    background-color: var(--color-pink);
+}
+
+.nav__left__item__container:hover {
+    background-color: var(--color-light-gray);
+}
+
+.icon__overla {
+    margin-right: 3rem;
+}
+
+.text {
+    align-items: center;
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.text__input__container {
+    align-items: flex-end;
+    box-shadow: var(--input-box-shadow);
+    /*background-color: var(--color-white);*/
+    border: 1px solid var(--color-light-gray);
+    border-radius: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    margin-left: 3.4rem;
+    overflow: hidden;
+    width: 30rem;
+}
+
+.input__title {
+    border: none;
+    background-color: var(--color-white);
+    font-size: 1.1rem;
+    font-weight: bold;
+    outline: none;
+    padding: 0.5rem 1rem;
+    width: 100%;
+}
+
+.input__para {
+    background-color: var(--color-white);
+    border: none;
+    outline: none;
+    padding: 0.9rem 1rem;
+    width: 100%;
+}
+
+.input__title,
+.input__btn {
+    display: none;
+}
+
+.text__input__container.show .input__title,
+.text__input__container.show .input__btn {
+    display: block;
+}
+
+.input__btn {
+    border: none;
+    background-color: var(--color-white);
+    color: var(--color-dark-gray);
+    cursor: pointer;
+    outline: none;
+    padding-bottom: 0.5rem;
+    width: 4rem;
+}
+
+.card__container {
+    background-color: var(--color-white);
+    padding-left: 8%;
+    display: flex;
+}
+
+.card__container.ab {
+    min-height: calc(100vh - 4rem);
+    padding-top: 2rem;
+}
+
+.card__container.home {
+    min-height: calc(100vh - 11rem);
+}
+
+.card {
+    box-shadow: var(--card-hover-box-shadow);
+    background-color: var(--color-white);
+    /*border: 1px solid var(--color-light-gray);*/
+    border-radius: 0.4rem;
+    margin-top: 0.8rem;
+    /*height: 1%;*/
+    overflow-wrap: break-word;
+    padding: 0.5rem;
+    position: relative;
+    flex-shrink: 1;
+    width: 15rem;
+}
+
+.card__text {
+    padding: 0.5rem;
+}
+
+.card__text>h3 {
+    padding-right: 2rem;
+}
+
+.card__pin__overlay {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 0.3rem;
+    place-items: center;
+}
+
+.card__icon__overlay {
+    padding: 0.3rem;
+    border-radius: 50%;
+    display: none;
+}
+
+.card__icon__overlay:hover {
+    background-color: var(--color-light-gray);
+}
+
+.card:hover .card__icon__overlay {
+    display: grid;
+}
+
+.card__btom__container {
+    display: flex;
+    height: 2rem;
+    margin-top: 1rem;
+}
+
+.card__btom__container> :nth-child(1) {
+    margin-right: 1rem;
+}
+
+@media only screen and (max-width: 1100px) {
+    .card__container {
+        padding-left: 20%;
+    }
+}
+
+@media only screen and(max-width:660px) {
+    .card__container {
+        /*padding-left: 40%;*/
+    }
+}
+
+@media only screen and (max-width: 425px) {
+    .nav__right {
+        display: none;
+    }
+
+    .card__container {
+        padding-left: 25%;
+    }
+}
